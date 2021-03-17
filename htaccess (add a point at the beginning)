@@ -1,0 +1,29 @@
+# archivo .htaccess
+
+RewriteEngine on
+
+RewriteRule ^$ controllers/Inicio.php
+
+RewriteRule ^iniciar-sesion$ controllers/IniciarSesion.php
+RewriteRule ^crear-usuario$ controllers/CrearUsuario.php
+RewriteRule ^cerrar-sesion$ controllers/CerrarSesion.php
+RewriteRule ^mi-perfil$ controllers/VerPerfil.php
+RewriteRule ^mis-publicaciones$ controllers/VerMisPublicaciones.php
+
+RewriteRule ^dar-en-adopcion$ controllers/CrearAnimal.php?tipo=adopcion
+RewriteRule ^dar-en-transito$ controllers/CrearAnimal.php?tipo=transito
+  #RewriteRule ^adopcion$ controllers/ListaAnimales.php?tipo=adopcion
+  #RewriteRule ^transito$ controllers/ListaAnimales.php?tipo=transito
+RewriteRule ^listado-animales$ controllers/ListaAnimales.php
+RewriteRule ^nueva-solicitud$ controllers/SolicitarPorAnimal.php
+
+RewriteRule ^adopcion-animal-([0-9]+)$ controllers/VerAnimal.php?id=$1
+RewriteRule ^transito_vaiven-animal-([0-9]+)$ controllers/VerAnimal.php?id=$1
+RewriteRule ^transito_urgente-animal-([0-9]+)$ controllers/VerAnimal.php?id=$1
+RewriteRule ^eliminar-publicacion$ controllers/EliminarAnimal.php?
+RewriteRule ^asignar-adopcion-([\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,})$ controllers/AsignarReceptor.php
+RewriteRule ^asignar-transito_vaiven-([\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,})$ controllers/AsignarReceptor.php
+RewriteRule ^asignar-transito_urgente-([\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,})$ controllers/AsignarReceptor.php
+
+
+
